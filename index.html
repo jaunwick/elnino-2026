@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Super El Niño 2026 — Full Breakdown</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:wght@300;400;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --sun: #f4900c;
+    --flame: #c0392b;
+    --deep: #1a0a00;
+    --coal: #2d1b0e;
+    --ash: #5c4033;
+    --parchment: #fdf3e7;
+    --sand: #eedcca;
+    --highlight: #f4900c;
+    --water: #1565c0;
+    --green: #2d6a4f;
+    --alert: #e53935;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Source Serif 4', Georgia, serif;
+    background: var(--parchment);
+    color: var(--deep);
+    font-size: 17px;
+    line-height: 1.75;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(160deg, #1a0a00 0%, #5c1a00 40%, #c0392b 75%, #f4900c 100%);
+    padding: 80px 40px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 70% 30%, rgba(244,144,12,0.3) 0%, transparent 60%);
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+  .hero-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #f4900c;
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 24px;
+  }
+  .hero h1 em { color: #f4900c; font-style: italic; }
+  .hero-sub {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.75);
+    max-width: 600px;
+    margin-bottom: 32px;
+  }
+  .hero-meta {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .hero-meta-item {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 1px;
+  }
+
+  /* ── ALERT BAR ── */
+  .alert-bar {
+    background: var(--flame);
+    color: #fff;
+    padding: 14px 40px;
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  /* ── LAYOUT ── */
+  .container { max-width: 860px; margin: 0 auto; padding: 0 40px; }
+
+  /* ── PROBABILITY CARDS ── */
+  .prob-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    margin: 40px 0;
+  }
+  .prob-card {
+    background: var(--coal);
+    color: #fff;
+    border-radius: 4px;
+    padding: 28px 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .prob-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--sun);
+  }
+  .prob-card.water::after { background: var(--water); }
+  .prob-card.green::after { background: var(--green); }
+  .prob-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--sun);
+    display: block;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .prob-card.water .prob-num { color: #64b5f6; }
+  .prob-card.green .prob-num { color: #81c995; }
+  .prob-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    opacity: 0.7;
+  }
+  .prob-source {
+    font-size: 10px;
+    opacity: 0.45;
+    margin-top: 6px;
+  }
+
+  /* ── SECTION ── */
+  section {
+    padding: 60px 0;
+    border-bottom: 1px solid rgba(92,64,51,0.2);
+  }
+  section:last-child { border-bottom: none; }
+
+  .section-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--sun);
+    margin-bottom: 8px;
+  }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.6rem, 3.5vw, 2.3rem);
+    font-weight: 700;
+    color: var(--flame);
+    line-height: 1.2;
+    margin-bottom: 28px;
+  }
+
+  h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--coal);
+    margin-top: 36px;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid var(--sand);
+  }
+
+  p { margin-bottom: 16px; }
+
+  /* ── QUOTE ── */
+  .quote-block {
+    background: var(--coal);
+    color: var(--sand);
+    border-left: 4px solid var(--sun);
+    padding: 28px 32px;
+    margin: 32px 0;
+    border-radius: 0 4px 4px 0;
+    position: relative;
+  }
+  .quote-block::before {
+    content: '"';
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    color: var(--sun);
+    opacity: 0.3;
+    position: absolute;
+    top: -10px; left: 16px;
+    line-height: 1;
+  }
+  .quote-block blockquote {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    line-height: 1.65;
+    padding-top: 20px;
+  }
+  .quote-attr {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--sun);
+    margin-top: 14px;
+  }
+
+  /* ── TIMELINE ── */
+  .timeline {
+    position: relative;
+    padding-left: 28px;
+    margin: 24px 0;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 8px; bottom: 8px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--sun), var(--flame));
+  }
+  .tl-item {
+    margin-bottom: 24px;
+    position: relative;
+  }
+  .tl-item::before {
+    content: '';
+    position: absolute;
+    left: -32px; top: 6px;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--sun);
+    border: 2px solid var(--parchment);
+  }
+  .tl-year {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: var(--flame);
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .tl-text { font-size: 0.95rem; }
+
+  /* ── CALLOUT BOX ── */
+  .callout {
+    background: var(--sand);
+    border: 1px solid rgba(92,64,51,0.25);
+    border-radius: 6px;
+    padding: 24px 28px;
+    margin: 28px 0;
+  }
+  .callout.danger {
+    background: #fff3f3;
+    border-color: var(--flame);
+    border-left: 4px solid var(--flame);
+  }
+  .callout.info {
+    background: #e8f4f8;
+    border-color: var(--water);
+    border-left: 4px solid var(--water);
+  }
+  .callout.green {
+    background: #e8f5e9;
+    border-color: var(--green);
+    border-left: 4px solid var(--green);
+  }
+  .callout-title {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .callout.danger .callout-title { color: var(--flame); }
+  .callout.info .callout-title { color: var(--water); }
+  .callout.green .callout-title { color: var(--green); }
+
+  /* ── DAMAGE TABLE ── */
+  .damage-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 0.9rem;
+  }
+  .damage-table thead tr {
+    background: var(--coal);
+    color: var(--sand);
+  }
+  .damage-table th {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 12px 16px;
+    text-align: left;
+  }
+  .damage-table td {
+    padding: 11px 16px;
+    border-bottom: 1px solid rgba(92,64,51,0.15);
+  }
+  .damage-table tr:nth-child(even) td { background: rgba(92,64,51,0.05); }
+  .damage-table .severity-high { color: var(--flame); font-weight: 700; }
+  .damage-table .severity-mod { color: #e67e22; font-weight: 600; }
+  .damage-table .severity-super { color: var(--alert); font-weight: 700; text-transform: uppercase; }
+
+  /* ── MITIGATION LIST ── */
+  .mit-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 28px 0;
+  }
+  @media (max-width: 620px) { .mit-grid { grid-template-columns: 1fr; } }
+  .mit-card {
+    background: #fff;
+    border: 1px solid rgba(92,64,51,0.2);
+    border-radius: 6px;
+    padding: 22px;
+  }
+  .mit-card h4 {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 12px;
+    font-weight: 700;
+  }
+  .mit-card ul {
+    list-style: none;
+    font-size: 0.9rem;
+  }
+  .mit-card ul li {
+    padding: 5px 0 5px 18px;
+    position: relative;
+    border-bottom: 1px solid rgba(92,64,51,0.08);
+  }
+  .mit-card ul li:last-child { border-bottom: none; }
+  .mit-card ul li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--green);
+    font-size: 0.75rem;
+    top: 7px;
+  }
+
+  /* ── TRIPLE THREAT DIAGRAM ── */
+  .triple-threat {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    margin: 40px 0;
+    flex-wrap: wrap;
+  }
+  .threat-circle {
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.82rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin: -30px;
+    position: relative;
+    z-index: 1;
+    transition: z-index 0s;
+  }
+  .threat-circle:hover { z-index: 10; }
+  .threat-circle.el-nino {
+    background: rgba(244,144,12,0.85);
+    color: #fff;
+    border: 2px solid #f4900c;
+  }
+  .threat-circle.ukraine {
+    background: rgba(21,101,192,0.82);
+    color: #fff;
+    border: 2px solid #1565c0;
+  }
+  .threat-circle.mideast {
+    background: rgba(192,57,43,0.82);
+    color: #fff;
+    border: 2px solid #c0392b;
+  }
+  .threat-label {
+    font-size: 11px;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 6px;
+    letter-spacing: 1.5px;
+  }
+  .threat-detail { font-size: 9px; line-height: 1.5; opacity: 0.9; }
+
+  /* ── REFS ── */
+  .refs {
+    background: var(--coal);
+    color: var(--sand);
+    padding: 40px;
+  }
+  .refs-inner { max-width: 860px; margin: 0 auto; }
+  .refs h3 {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--sun);
+    margin-bottom: 20px;
+    border: none;
+    padding: 0;
+  }
+  .ref-item {
+    font-size: 0.8rem;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    line-height: 1.5;
+  }
+  .ref-item a { color: #90caf9; text-decoration: none; }
+  .ref-item a:hover { text-decoration: underline; }
+  .ref-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    color: var(--sun);
+    margin-right: 8px;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: var(--deep);
+    color: rgba(255,255,255,0.35);
+    text-align: center;
+    padding: 24px 40px;
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+  /* ── UTILITIES ── */
+  strong { color: var(--coal); }
+  .text-flame { color: var(--flame); font-weight: 700; }
+  .text-orange { color: var(--sun); font-weight: 700; }
+  .divider {
+    width: 60px;
+    height: 3px;
+    background: var(--sun);
+    margin: 0 0 32px;
+  }
+  sup { font-size: 0.65em; color: var(--water); vertical-align: super; }
+
+  @media (max-width: 640px) {
+    .hero { padding: 60px 24px 40px; }
+    .container { padding: 0 24px; }
+    .refs { padding: 32px 24px; }
+    .triple-threat { flex-direction: column; align-items: center; }
+    .threat-circle { margin: -15px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-label">⚠ Climate Crisis Briefing — June 2026</div>
+    <h1>The <em>Super El Niño</em><br>is Coming</h1>
+    <p class="hero-sub">A full breakdown of the science, the odds, the historical damage, the compounding geopolitical crises, and what Filipinos can do right now.</p>
+    <div class="hero-meta">
+      <span class="hero-meta-item">Sources: NOAA · WMO · PAGASA · WFP · DA · Inquirer · CNBC · Rappler</span>
+      <span class="hero-meta-item">Last updated: June 8, 2026</span>
+    </div>
+  </div>
+</div>
+
+<!-- ALERT BAR -->
+<div class="alert-bar">
+  ⚡ PAGASA El Niño Alert issued April 22, 2026 — 79% probability of emergence by June–August 2026
+</div>
+
+<!-- SECTION 1: WHAT IS A SUPER EL NIÑO -->
+<section>
+  <div class="container">
+    <div class="section-tag">Section 01 — The Science</div>
+    <h2>Why Forecasters Are Calling This a <em>"Super"</em> El Niño</h2>
+    <div class="divider"></div>
+
+    <h3>What's a Regular El Niño — and What Makes It "Super"?</h3>
+    <p>Every few years, the normally steady easterly trade winds blowing across the equatorial Pacific weaken. When they do, the massive pool of warm water that had piled up in the western Pacific near Indonesia sloshes back eastward toward South America. This triggers a spike in sea surface temperatures (SSTs) in the central and eastern Pacific. When those temperatures climb at least <strong>0.5°C above average</strong> for three consecutive months, it qualifies as an El Niño.</p>
+    <p>A <strong>Super El Niño</strong> — also called a "Very Strong" El Niño — happens when SST anomalies exceed <strong>2.0°C above the long-term baseline</strong> in the Niño 3.4 monitoring zone. This threshold has only been surpassed a handful of times in recorded history: 1982–83, 1997–98, and 2015–16. What makes it qualitatively different is that at 2°C+, the sheer volume of heat transferred from ocean to atmosphere is sufficient to physically displace the jet streams of both hemispheres, simultaneously producing droughts, floods, and wildfires in countries thousands of kilometers from the Pacific.</p>
+
+    <div class="callout danger">
+      <div class="callout-title">⚠ The Kelvin Wave — The Engine Underneath</div>
+      <p style="font-size:0.93rem; margin:0">A massive pulse of warm water, stretching thousands of kilometers and running hundreds of meters deep, is currently surging eastward beneath the Pacific from Asia toward South America. This is an oceanic Kelvin wave. It is invisible from above but tracked by NOAA's TAO buoy network. As it passes, it pushes the thermocline (the boundary between warm surface water and cold deep water) downward, replacing cool upwelling water with warm water — priming the entire eastern Pacific for a dramatic SST spike. Critically, NOAA's subsurface data shows the <strong>2026 Kelvin wave running warmer than the equivalent stage of the 1997–98 event</strong> — the most powerful El Niño of the modern era.</p>
+    </div>
+
+    <h3>What the Models Are Saying Right Now</h3>
+    <p>Multiple major forecast centers — NOAA's Climate Forecast System, the European Centre for Medium-Range Weather Forecasts (ECMWF), and Australia's Bureau of Meteorology — have converged on a peak anomaly in the Niño 3.4 region reaching approximately <strong>3°C above average by November 2026</strong>. Some individual ensemble runs project values approaching <strong>4°C</strong> — nearly double the threshold that defines a Super El Niño. Those projections are, in the words of one analyst, "off the charts" for a standard forecast map.</p>
+    <p>To put that in context: during the 1997–98 event, SST anomalies peaked around 2.8°C. The current Kelvin wave is developing at a warmer baseline than 1997–98 did at the same developmental stage — and 1997–98 generated an estimated <strong>$5.7 trillion in global economic losses</strong> within five years of its occurrence.</p>
+
+    <div class="quote-block">
+      <blockquote>"Updated El Niño forecast for this summer and autumn is 'off the charts' extreme with 'boiling red' map colors along the Equatorial central and eastern Pacific Ocean."</blockquote>
+      <div class="quote-attr">— Summary of NOAA CPC May 2026 forecast charts, widely reported</div>
+    </div>
+
+    <p>One important scientific caveat: <strong>El Niño strength is not yet locked in.</strong> Westerly wind bursts — which helped build the warm pool — can also trigger evaporative cooling if they continue too long. A full "Super El Niño" at 2°C+ is the most probable single outcome, but a merely "Strong" event (1.5–2.0°C) remains possible. Nature always reserves the right to surprise.</p>
+  </div>
+</section>
+
+<!-- SECTION 2: PROBABILITIES & TIMING -->
+<section>
+  <div class="container">
+    <div class="section-tag">Section 02 — Probability & Timeline</div>
+    <h2>What Are the Odds, and When Will It Hit?</h2>
+    <div class="divider"></div>
+
+    <div class="prob-grid">
+      <div class="prob-card">
+        <span class="prob-num">82%</span>
+        <div class="prob-label">El Niño by<br>May–Jul 2026</div>
+        <div class="prob-source">NOAA CPC, May 16, 2026</div>
+      </div>
+      <div class="prob-card">
+        <span class="prob-num">96%</span>
+        <div class="prob-label">Persists through<br>Dec 2026–Feb 2027</div>
+        <div class="prob-source">NOAA CPC, May 2026</div>
+      </div>
+      <div class="prob-card water">
+        <span class="prob-num water">80%</span>
+        <div class="prob-label">El Niño by<br>Jun–Aug 2026</div>
+        <div class="prob-source">WMO, June 2, 2026</div>
+      </div>
+      <div class="prob-card water">
+        <span class="prob-num water">90%+</span>
+        <div class="prob-label">Continues through<br>November 2026</div>
+        <div class="prob-source">WMO, June 2, 2026</div>
+      </div>
+      <div class="prob-card green">
+        <span class="prob-num green">79%</span>
+        <div class="prob-label">El Niño by<br>Jun–Jul–Aug 2026</div>
+        <div class="prob-source">PAGASA, Apr 22, 2026</div>
+      </div>
+      <div class="prob-card green">
+        <span class="prob-num green">92%</span>
+        <div class="prob-label">Moderate–Strong<br>by Q4 2026</div>
+        <div class="prob-source">PAGASA, May 2026</div>
+      </div>
+    </div>
+
+    <h3>Expected Developmental Timeline</h3>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-year">March–April 2026</div>
+        <p class="tl-text">La Niña ends. ENSO enters neutral phase. Subsurface Kelvin wave already surging eastward. PAGASA issues El Niño Watch (March 25). Drought begins in parts of Northern Luzon (Ilocos Norte).</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">May–July 2026 (NOW)</div>
+        <p class="tl-text">PAGASA upgrades to El Niño Alert (April 22). El Niño conditions expected to officially emerge by June–August. Likely to start <strong>weak</strong> in early onset. SSTs in central-eastern Pacific approaching threshold. 15 areas in Luzon already experiencing drought; 32 areas reporting dry spells.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">August–October 2026</div>
+        <p class="tl-text">PAGASA forecasts El Niño strengthening from <strong>weak to moderate-to-strong</strong>. Below-normal rainfall in Northern Luzon intensifies. Southwest monsoon (Habagat) season — western coastal areas may still see some normal rainfall, but the rest of the country will face increasing dryness. High typhoon activity possible during this window (9–17 storms expected in the Philippine Area of Responsibility).</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">November 2026–February 2027</div>
+        <p class="tl-text">El Niño expected to reach peak intensity — potentially <strong>Strong to Very Strong (Super)</strong>. Most severe drought conditions expected. NOAA gives a 96% probability of El Niño persisting through this window. El Niño may not end until early 2027. Rice and agricultural losses expected to be heaviest in this period.</p>
+      </div>
+    </div>
+
+    <div class="callout info">
+      <div class="callout-title">🌊 A Note on the "Super" Timeline</div>
+      <p style="font-size:0.93rem; margin:0">PAGASA's Deputy Administrator Dr. Marcelino Villafuerte noted there are two main scenarios: a moderate-to-strong event (the baseline scenario) and an extreme "Super El Niño" event (the tail-risk scenario). PAGASA has asked the Task Force El Niño to plan for both. The DA is already planning for rice production losses of up to <strong>700,000 metric tons (3.5% of annual production target)</strong> under the strong-event scenario alone.</p>
+    </div>
+
+    <div class="quote-block">
+      <blockquote>"Our experts estimate an 80 percent probability that El Niño conditions will emerge in the period between June and August 2026. This likelihood increases to around 90 percent through the remainder of the forecast period, that is September–December."</blockquote>
+      <div class="quote-attr">— WMO Secretary-General Celeste Saulo, Press Conference, Geneva, June 2, 2026</div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: EFFECTS ON THE PHILIPPINES -->
+<section>
+  <div class="container">
+    <div class="section-tag">Section 03 — Philippine Impact</div>
+    <h2>How Will Super El Niño Hit the Philippines?</h2>
+    <div class="divider"></div>
+
+    <p>The Philippines sits squarely in El Niño's primary damage zone. Its geographic position means that when the Walker Circulation (the large atmospheric loop linking Pacific temperatures to rainfall patterns across Asia) weakens and shifts during an El Niño, the Philippines loses the rainfall it depends on for agriculture, drinking water, and hydroelectric power. The effects are not uniform — they vary sharply by region.</p>
+
+    <h3>Agriculture & Food Security</h3>
+    <p>The Department of Agriculture (DA) projects that <strong>rice production alone could drop by as much as 700,000 metric tons (3.5%)</strong> of the annual production target if a strong El Niño materializes. This is likely an underestimate for a Super El Niño scenario. Rice paddy dryness, crop failures, and loss of irrigation water combine to devastate smallholder farmers. Nationwide, a Super El Niño could inflict an estimated <strong>P286.8 billion (approximately US$5.5 billion) in direct and indirect losses</strong>, according to a study published in the Inquirer in May 2026.</p>
+    <p>Adding to the domestic risk: the Philippines imports <strong>80–90% of its rice from Vietnam</strong>, and Vietnam's Mekong River Delta is itself highly sensitive to El Niño. Severe drought and salinity intrusion there can reduce winter-spring rice output by <strong>10–13% in extreme years</strong> — which means the Philippines cannot simply "import its way out" of a domestic rice shortage when the crisis is global.</p>
+
+    <h3>Drought Zones & Dry Spells (Already Underway)</h3>
+    <p>As of April 22, 2026 — before El Niño has even officially formed — PAGASA already counted:</p>
+    <div class="callout danger">
+      <div class="callout-title">⚠ Current Drought & Dry Spell Status (April 2026)</div>
+      <p style="font-size:0.93rem; margin:0"><strong>15 areas in Luzon</strong> are already experiencing drought (rainfall more than 60% below normal for three consecutive months), particularly in Ilocos Norte. <strong>32 areas nationwide</strong> are experiencing dry spells (21–60% below normal). PAGASA forecasts <strong>warmer-than-normal temperatures nationwide from May to October 2026</strong>. Northern Luzon is specifically forecast for below-normal rainfall by October 2026. Once El Niño fully develops, these conditions are expected to spread and deepen significantly.</p>
+    </div>
+
+    <h3>Regional Breakdown by Vulnerability</h3>
+    <p>The damage from a Super El Niño is not spread evenly. Based on historical analogs and a 2026 academic study cited in the Philippine Daily Inquirer, here's how each major region is expected to be affected:</p>
+    <table class="damage-table">
+      <thead>
+        <tr>
+          <th>Region</th>
+          <th>Primary Risk</th>
+          <th>Key Crops Affected</th>
+          <th>Severity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Northern & Central Luzon</td>
+          <td>Severe drought, reservoir inflow deficits, dam water crashes</td>
+          <td>Rice, vegetables</td>
+          <td class="severity-super">Critical</td>
+        </tr>
+        <tr>
+          <td>Southern Luzon & Bicol</td>
+          <td>Alternating floods and dry spells; erratic rainfall</td>
+          <td>Rice, coconut, abaca</td>
+          <td class="severity-high">High</td>
+        </tr>
+        <tr>
+          <td>Visayas</td>
+          <td>Sugarcane and fisheries decline; reduced rainfall</td>
+          <td>Sugarcane, fish</td>
+          <td class="severity-high">High</td>
+        </tr>
+        <tr>
+          <td>Mindanao</td>
+          <td>Localized drought in interior areas; reduced river flows</td>
+          <td>Corn, pineapple, export crops</td>
+          <td class="severity-mod">Moderate–High</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Water Supply & Energy</h3>
+    <p>Reduced rainfall means drastically reduced inflow into major reservoirs (Angat, Pantabangan, Magat, Pulangi). These dams serve double duty — they supply Metro Manila's drinking water and power multiple hydroelectric plants. In past strong El Niño years, reservoir levels dropped so low that rotational water supply cuts affected millions of households, and hydroelectric output fell sharply, forcing the National Grid Corporation to rely more heavily on expensive, fossil fuel-dependent peaking plants.</p>
+
+    <h3>Typhoons — A Counterintuitive Risk</h3>
+    <p>It's a common misconception that El Niño means fewer typhoons. During El Niño, typhoon formation in the western Pacific actually shifts, and storms that do form tend to be more intense due to warmer ocean temperatures. PAGASA projects <strong>9–17 tropical cyclones entering or forming within the Philippine Area of Responsibility (PAR)</strong> from May to October 2026. Western coastal areas may still receive near-normal or above-normal rainfall from the Southwest Monsoon, while El Niño-driven dryness hammers the interior. Communities in low-lying watershed areas could face the worst of both worlds: prolonged drought followed by sudden intense flooding from a typhoon — with dry, hardened soil absorbing less water and increasing landslide risk.</p>
+
+    <h3>Fisheries</h3>
+    <p>A 2019 World Bank-Philippine analysis noted that El Niño may reduce annual fish catches by up to <strong>20% in open waters</strong> and up to <strong>23% in coastal waters within 15km of the shoreline</strong>. This directly affects coastal communities in Davao, Eastern Samar, Cebu, and Zamboanga, many of which are already among the country's most food-insecure populations.</p>
+
+    <h3>Health</h3>
+    <p>Prolonged heat and reduced water availability historically trigger spikes in heat stroke, waterborne diseases (as communities rely on unclean surface water when taps run dry), and malnutrition among children in drought-affected rural areas. The Department of Health is expected to issue heat advisories, but health infrastructure in rural provinces remains thin.</p>
+
+    <div class="quote-block">
+      <blockquote>"With the possibility of reduced rainfall and warmer temperatures, agriculture must begin preparing mitigation measures early."</blockquote>
+      <div class="quote-attr">— PAGASA Administrator Nathaniel Servando, Press Conference, April 22, 2026</div>
+    </div>
+    <div class="quote-block">
+      <blockquote>"This development has significant implications for weather patterns across the country, including below-normal rainfall in several areas, which may affect critical sectors such as water resources, agriculture, energy supply, and overall public welfare."</blockquote>
+      <div class="quote-attr">— PAGASA, Official El Niño Alert Statement, April 22, 2026</div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: HISTORICAL RECORD -->
+<section>
+  <div class="container">
+    <div class="section-tag">Section 04 — Historical Record</div>
+    <h2>What History Tells Us: Previous El Niños in the Philippines</h2>
+    <div class="divider"></div>
+
+    <p>Super El Niño events recur on average every 10 to 15 years. Each one has delivered a distinctive kind of shock — but the pattern of damage has been remarkably consistent. The table below and the summaries that follow draw on DA data, a World Bank study on El Niño and Philippine poverty, and Inquirer/Asia News Network investigative reports from May 2026.</p>
+
+    <h3>The Major Events at a Glance</h3>
+    <table class="damage-table">
+      <thead>
+        <tr>
+          <th>El Niño Event</th>
+          <th>Classification</th>
+          <th>Area Damaged</th>
+          <th>Agricultural Loss</th>
+          <th>Key Impact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1982–83</td>
+          <td class="severity-high">Strong</td>
+          <td>450,000 ha</td>
+          <td>Severe (est. P4.1B in 1990-92 follow-on)</td>
+          <td>Farmland drought; early forest fires</td>
+        </tr>
+        <tr>
+          <td>1991–92</td>
+          <td class="severity-mod">Moderate</td>
+          <td>Significant</td>
+          <td>P4.1 billion</td>
+          <td>Compounded by Mt. Pinatubo eruption; forced import reliance</td>
+        </tr>
+        <tr>
+          <td>1997–98</td>
+          <td class="severity-super">Super</td>
+          <td>677,441 ha (largest ever)</td>
+          <td>P3.07B (in 1998 pesos; actual devastation was far greater)</td>
+          <td>Rainfall fell to half of historical levels; drought in 2/3 of the country; rice output cut by 20%+; 10,000 ha of natural forests destroyed by fires; national poverty rose from 25% to 28%</td>
+        </tr>
+        <tr>
+          <td>2009–10</td>
+          <td class="severity-high">Strong</td>
+          <td>555,102 ha</td>
+          <td>P17.44 billion</td>
+          <td>Largest monetary loss until 2015; worst episode between 1997 and 2015</td>
+        </tr>
+        <tr>
+          <td>2015–16</td>
+          <td class="severity-super">Super</td>
+          <td>556,721 ha</td>
+          <td>P15.2 billion</td>
+          <td>Dry conditions lasted 18 months; affected about a third of the country</td>
+        </tr>
+        <tr>
+          <td>2023–24</td>
+          <td class="severity-high">Strong</td>
+          <td>Wide national reach</td>
+          <td>P15.3 billion (333,195 farmers/fishers; 15 regions)</td>
+          <td>Over 7 million Filipinos affected; drought in 37 provinces; dry spells in 22 provinces</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Deep Dive: The 1997–98 Super El Niño</h3>
+    <p>The 1997–98 event remains the benchmark for disaster. Rainfall across the country fell to <strong>half of historical levels</strong>. Two-thirds of the Philippines experienced drought conditions. Forest fires — fueled by the desiccation of vegetation — destroyed nearly <strong>10,000 hectares of natural forest</strong>. Rice output was cut by more than 20%, triggering one of the largest rice import surges in Philippine history. The World Bank later estimated that much of the observed jump in the national poverty rate — from <strong>25% in 1997 to 28% in 1998</strong> — was directly attributable to the El Niño shock on the agricultural sector. This single climate event effectively pushed millions of Filipinos below the poverty line.</p>
+
+    <h3>Deep Dive: The 2015–16 Super El Niño</h3>
+    <p>The 2015–16 event was notable for its <em>duration</em> — dry conditions persisted for <strong>18 months</strong>, an extraordinarily long stretch. It affected about a third of the country, inflicting P15 billion in agricultural losses across 556,721 hectares. What made 2015–16 particularly difficult for farmers is that extended droughts — unlike single-season shocks — deplete soil moisture, groundwater reserves, and seeds stocks across multiple planting cycles, making recovery far slower.</p>
+
+    <h3>Deep Dive: The 2023–24 El Niño (The Most Recent Benchmark)</h3>
+    <p>The 2023–24 event was a "strong" El Niño — not yet classified as super — and still caused <strong>P15.3 billion in total agricultural damage</strong>, affecting <strong>333,195 farmers and fishermen across 15 regions</strong>. More than 7 million Filipinos were affected. Drought was recorded in 37 provinces; dry spells hit 22 more. This is the baseline the DA and PAGASA are working from when they estimate what a super El Niño in 2026 would look like. The projected damage from a 2026 super event is <strong>P286.8 billion</strong> — nearly 19 times the 2023–24 losses.</p>
+
+    <div class="callout">
+      <div class="callout-title">📌 The Pattern of "Short-Term Fixes"</div>
+      <p style="font-size: 0.93rem; margin:0">A 2026 investigative report in the Philippine Daily Inquirer found that Philippine agricultural policy following El Niño has consistently relied on short-term tactical responses — crop diversification into mung beans or cassava, planting calendar adjustments, cloud seeding — rather than long-term systemic investment in drought-resilient infrastructure. The report noted that planting calendar adjustments "presuppose predictable rainfall, yet Super El Niño events are characterized by prolonged droughts and erratic precipitation, rendering such adjustments largely ineffective." This is the institutional vulnerability behind the numbers.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5: GEOPOLITICAL COMPOUNDING -->
+<section>
+  <div class="container">
+    <div class="section-tag">Section 05 — The Compounding Crisis</div>
+    <h2>The Perfect Storm: Super El Niño + Two Wars</h2>
+    <div class="divider"></div>
+
+    <p>A Super El Niño in isolation would be a serious crisis. But the Philippines in 2026 is facing it alongside two active geopolitical conflicts that are already fracturing global food and energy supply chains. Each crisis amplifies the damage of the others. Chris Jaccarini, senior analyst at the Energy and Climate Intelligence Unit (UK), described it this way:</p>
+
+    <div class="quote-block">
+      <blockquote>"Food prices are being squeezed from both sides: by climate extremes disrupting production in major growing regions, and by a food system still hooked on fossil fuels and therefore exposed to spikes in gas, fertilizer, transport, and packaging costs. That is why the prospect of a strong El Niño matters. It can turbocharge weather risks in a climate already destabilized by human emissions, compounding inflation driven by high fossil fuel prices."</blockquote>
+      <div class="quote-attr">— Chris Jaccarini, Energy and Climate Intelligence Unit, CNBC, April 9, 2026</div>
+    </div>
+
+    <!-- TRIPLE THREAT DIAGRAM -->
+    <div class="triple-threat">
+      <div class="threat-circle el-nino">
+        <span class="threat-label">Super El Niño</span>
+        <span class="threat-detail">Drought · Crop failure<br>Water scarcity · Forest fires<br>Fishing collapse<br>Dam depletion</span>
+      </div>
+      <div class="threat-circle ukraine">
+        <span class="threat-label">Ukraine War</span>
+        <span class="threat-detail">Global wheat & grain<br>disruption · Fertilizer<br>shortage from Russia<br>& Belarus</span>
+      </div>
+      <div class="threat-circle mideast">
+        <span class="threat-label">Middle East / Iran</span>
+        <span class="threat-detail">50% world urea<br>shutoff · Oil above<br>$100/barrel · Shipping<br>routes disrupted</span>
+      </div>
+    </div>
+    <p style="text-align:center; font-family:'Space Mono',monospace; font-size:9px; opacity:0.5; margin-top:-10px; margin-bottom:32px;">The overlap area is where the Philippines is caught — hit by all three simultaneously.</p>
+
+    <h3>Crisis 1: The Ukraine–Russia War (Since 2022)</h3>
+    <p>Ukraine is one of the world's largest exporters of wheat, corn, and sunflower oil. Russia and Belarus together supply a significant share of global potash and phosphorus fertilizers. The war, now in its fourth year, has kept global grain markets elevated and disrupted fertilizer supply chains that the Philippines relies on for its own domestic crop production. While global markets have partially adjusted since 2022, prices remain high — and any additional disruption from a major weather event would compound the strain. The World Bank's Commodity Markets Outlook projects fertilizer prices will rise <strong>31% on average in 2026</strong>, reaching levels not seen since the 2022 crisis.</p>
+
+    <h3>Crisis 2: The Iran–US Conflict and the Strait of Hormuz</h3>
+    <p>This is the more acute and immediate compounding factor. The Middle East — particularly the Gulf states — produces approximately <strong>50% of the world's urea and nitrogen-based fertilizers</strong>. The ongoing conflict has effectively closed or heavily disrupted the Strait of Hormuz, through which approximately <strong>20 million barrels of oil per day</strong> — roughly one in five barrels consumed globally — normally flow. This has driven oil prices above <strong>$100 per barrel</strong> and triggered a spike in urea prices of <strong>46% month-on-month</strong> at its peak, according to World Bank data.</p>
+    <p>The WFP has been direct in its assessment of the convergence: WFP Deputy Executive Director Carl Skau warned that <strong>"without an adequately funded humanitarian response, it could spell catastrophe for millions already on the edge."</strong> The WFP projected in March 2026 that up to <strong>45 million more people</strong> could fall into acute food insecurity (IPC3+) globally if the conflict does not end by mid-year — adding to the 318 million already food insecure worldwide.</p>
+
+    <div class="quote-block">
+      <blockquote>"If this conflict continues, it will send shockwaves across the globe, and families who already cannot afford their next meal will be hit the hardest. Without an adequately funded humanitarian response, it could spell catastrophe for millions already on the edge."</blockquote>
+      <div class="quote-attr">— Carl Skau, WFP Deputy Executive Director & COO, March 2026</div>
+    </div>
+
+    <h3>How All Three Converge on the Philippines</h3>
+    <p>The WFP published a dedicated brief titled <em>"Impacts of the Ongoing Energy Crisis and the Forecasted El Niño to the Philippines"</em> in May 2026, specifically because the convergence of these forces is uniquely threatening to the country. Here is the compounding mechanism:</p>
+
+    <div class="callout danger">
+      <div class="callout-title">🔴 The Compounding Chain for the Philippines</div>
+      <ul style="font-size:0.92rem; padding-left:20px; margin-top:8px;">
+        <li style="margin-bottom:8px;"><strong>Fertilizer shock:</strong> The Middle East conflict cuts nitrogenous fertilizer supply at planting season — the timing is unforgiving. Philippine farmers who can't access fertilizer at planting cannot apply it later. Smaller harvests follow, with price consequences appearing months later.</li>
+        <li style="margin-bottom:8px;"><strong>Energy shock:</strong> The Philippines declared a State of National Energy Emergency in March 2026. Higher oil prices drive up fuel costs for farming machinery, fishing boats, water pumps, and transport. El Niño's impact on hydroelectric power then forces the grid to rely even more heavily on expensive, imported fossil fuels.</li>
+        <li style="margin-bottom:8px;"><strong>Import source shock:</strong> Vietnam — which supplies 80–90% of Philippine rice imports — is itself a major El Niño victim. Its Mekong Delta rice output may fall 10–13% in extreme years. Thailand, the world's second-largest rice exporter, also faces weaker rainfall. Import-dependent countries like the Philippines face not just domestic production shortfalls, but also global rice market scarcity and higher import prices simultaneously.</li>
+        <li style="margin-bottom:8px;"><strong>Fiscal shock:</strong> A 2026 Inquirer analysis identified a triple threat: rising national debt, structural peso depreciation (which makes food imports more expensive in peso terms), and El Niño agricultural losses — a combination described as a "downward spiral" capable of "masking worsening household welfare" behind nominal GDP growth.</li>
+        <li style="margin-bottom:8px;"><strong>ORF Middle East analysis:</strong> Noted that the Philippines faces "potential food insecurity further exacerbated by intermittent rice and fertilizer export restrictions, dependencies on energy-intensive irrigation practices, and rising costs of cooking gas."</li>
+      </ul>
+    </div>
+
+    <p>The WTO's Agriculture Committee meeting in May 2026 explicitly flagged the same concern: <strong>"The conflict in the Middle East is causing a shortfall in fertilizer shipments. Paired with the effects of the expected El Niño weather pattern, this may negatively impact food production in the coming year."</strong></p>
+
+    <div class="quote-block">
+      <blockquote>"The science is clear: El Niño is arriving on our doorstep in the coming months with 90% certainty. The world must treat it as the urgent climate warning it is. El Niño conditions will pour fuel on the fire of a warming world."</blockquote>
+      <div class="quote-attr">— UN Secretary-General António Guterres, video statement on WMO El Niño Update, June 2, 2026</div>
+    </div>
+
+    <div class="quote-block">
+      <blockquote>"We need to prepare for a potentially strong El Niño event – which will exacerbate drought and heavy rainfall and increase the risk of heatwaves both on land and in the ocean. Communities that were already struggling will be pushed farther beyond their limits."</blockquote>
+      <div class="quote-attr">— WMO Secretary-General Celeste Saulo, June 2026</div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6: MITIGATION -->
+<section>
+  <div class="container">
+    <div class="section-tag">Section 06 — Action Plan</div>
+    <h2>What Can Be Done: Mitigation for Farmers & Watershed Communities</h2>
+    <div class="divider"></div>
+
+    <p>The good news embedded in the bad news is this: because El Niño can be forecast months in advance, early action is far more effective than reactive disaster response. <strong>The FAO estimates that every US$1 invested in anticipatory action generates US$7 in value of avoided losses and added benefits for families.</strong> The window for that investment is now — before conditions worsen.</p>
+
+    <div class="callout info">
+      <div class="callout-title">ℹ The Government's Framework: RAIN Roadmap + Task Force El Niño</div>
+      <p style="font-size:0.93rem; margin:0">The national government's response is structured around the 2023 "Roadmap to Address the Impact of Niño" (RAIN) and a revived Task Force El Niño that coordinates across agriculture (DA), water (NIA, NWRB), energy (DOE), health (DOH), and disaster risk (NDRRMC). PAGASA Deputy Administrator Villafuerte confirmed the Task Force convened in late April 2026 specifically to prepare scenarios for both moderate and super El Niño conditions.</p>
+    </div>
+
+    <div class="mit-grid">
+      <div class="mit-card">
+        <h4>🌾 For Farmers — Crop & Planting</h4>
+        <ul>
+          <li>Shift to drought-resistant, fast-maturing rice varieties (the DA is expected to distribute these as seed support)</li>
+          <li>Diversify into low water-intensive crops: mung beans, cassava, sweet potato, sorghum</li>
+          <li>Adjust planting calendars to align with the Northeast Monsoon (Amihan) season for later planting cycles</li>
+          <li>Practice raised-bed farming to reduce soil moisture loss</li>
+          <li>Coordinate with the nearest NIA office for crop scheduling that aligns with available irrigation water</li>
+          <li>Consider fallowing fields during peak dry months rather than planting crops that will fail</li>
+        </ul>
+      </div>
+      <div class="mit-card">
+        <h4>💧 For Farmers — Water Management</h4>
+        <ul>
+          <li>Install or repair farm-level rainwater harvesting systems now, while Habagat season still delivers some rain</li>
+          <li>Dig or rehabilitate shallow farm ponds and check dams</li>
+          <li>Advocate for DA-deployed solar-powered irrigation systems for off-grid farms</li>
+          <li>Coordinate with NIA and LGUs to access water augmentation pumps</li>
+          <li>Practice alternate wetting and drying (AWD) in rice paddies — reduces water use by 25–30%</li>
+          <li>Mulch fields heavily to reduce evaporation</li>
+        </ul>
+      </div>
+      <div class="mit-card">
+        <h4>🏔 For Watershed Communities</h4>
+        <ul>
+          <li>Coordinate with DENR on watershed rehabilitation programs — denuded mountains increase runoff, flooding, and landslide risk when rare intense rains hit</li>
+          <li>Participate in community reforestation projects to stabilize slopes and recharge groundwater</li>
+          <li>Establish and enforce a local fire watch — DENR is preparing training programs to prevent and control grass and forest fires, which peak during El Niño droughts</li>
+          <li>Inventory all local water sources (springs, wells, communal tanks) before drought peaks; report drying sources early to LGU water offices</li>
+          <li>Prepare evacuation plans: a dry typhoon season can turn deadly fast when a storm hits hardened, parched soil</li>
+        </ul>
+      </div>
+      <div class="mit-card">
+        <h4>🏠 For Households</h4>
+        <ul>
+          <li>Start conserving water now — repair leaks, reduce usage, store safe drinking water</li>
+          <li>The National Water Resources Board has already urged water providers to implement conservation measures</li>
+          <li>Build a 2–3 week food reserve of staple foods (rice, canned goods) before potential price spikes</li>
+          <li>Know your LGU's El Niño response contacts and check PAGASA advisories regularly</li>
+          <li>If in a watershed area prone to landslides, identify evacuation routes and nearest safe zones</li>
+          <li>Explore atmospheric water generators (AWGs) — feasible in the Philippines given average humidity of 80–82%</li>
+        </ul>
+      </div>
+      <div class="mit-card">
+        <h4>🏛 LGU & Government Actions</h4>
+        <ul>
+          <li>Convene local Task Force El Niño counterparts early — do not wait for national directive</li>
+          <li>Promote rainwater harvesting at barangay level and procure communal tanks</li>
+          <li>Repair and upgrade local irrigation canals before the dry season intensifies</li>
+          <li>Deploy water-fetching assistance for communities when tap sources run dry</li>
+          <li>Set up livelihood support programs for farmers who face crop losses</li>
+          <li>Coordinate with DA on cloud seeding operations when rain-bearing systems are present but not precipitating effectively</li>
+          <li>Identify vulnerable households for early Walang Gutom food stamp program activation</li>
+        </ul>
+      </div>
+      <div class="mit-card">
+        <h4>📡 Long-Term Structural Actions</h4>
+        <ul>
+          <li>Invest in permanent solar-powered irrigation infrastructure — removes vulnerability to both El Niño and power outages</li>
+          <li>Commission watershed rehabilitation as a national priority — stop deforestation, restore ground cover</li>
+          <li>Develop ASEAN-level bilateral agreements for rice supply security (reduce 80–90% dependence on Vietnam)</li>
+          <li>Build strategic grain and seed reserves at regional level — not just in Manila</li>
+          <li>Improve dam siltation management so reservoirs retain maximum capacity heading into dry seasons</li>
+          <li>Support WFP-ADB partnership programs on climate-resilient food systems</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="quote-block">
+      <blockquote>"Mitigating El Niño's effects is not just an agricultural challenge but a national priority to protect food security and ensure stability in markets and communities across the Philippines."</blockquote>
+      <div class="quote-attr">— Secretary Francisco Tiu Laurel, Department of Agriculture, 2026</div>
+    </div>
+
+    <div class="quote-block">
+      <blockquote>"We understand El Niño; we can prepare much better for El Niño thanks to science and to the investment of many countries to be well prepared. But on top of El Niño, you have extreme events and those extreme events are requiring more and more investment."</blockquote>
+      <div class="quote-attr">— WMO Secretary-General Celeste Saulo, Geneva Press Conference, June 2, 2026</div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 7: CLAUDE'S ADDITIONS -->
+<section>
+  <div class="container">
+    <div class="section-tag">Section 07 — Additional Critical Dimensions</div>
+    <h2>Key Issues Not to Miss</h2>
+    <div class="divider"></div>
+
+    <h3>🌡 Global Temperature Records — 2027 Could Break Everything</h3>
+    <p>El Niño typically adds <strong>0.1–0.2°C to global average temperatures</strong> during its peak, and this effect lags the event's onset by several months. The 12-month period from April 2025 to March 2026 is already the warmest ever recorded globally. Carbon Brief projects 2026 as the second-warmest year on record. But with a Super El Niño peaking in late 2026, climate scientist Dr. Daniel Swain of UCLA warned: <em>"Every time we have a strong El Niño event, the Earth's average temperature that year goes up by a few tenths of a degree Celsius."</em> James Hansen's Columbia team projects global temperatures could reach <strong>+1.7°C above pre-industrial levels by 2027</strong> if a strong El Niño fully materializes. For the Philippines, this means not just a dry year — but potentially the hottest year in national history.</p>
+
+    <h3>🪸 Coral Reef Bleaching</h3>
+    <p>The Philippines contains some of the most biodiverse coral reef ecosystems on Earth — part of the Coral Triangle, which is called the "Amazon of the seas." During the 1997–98 Super El Niño, <strong>16% of the world's coral reefs died in a single year</strong> due to ocean warming and bleaching. A 2026 Super El Niño, on a baseline of ocean temperatures already elevated by climate change, poses an existential threat to reef ecosystems that Philippine fisheries, tourism, and coastal protection depend on. This has not received adequate attention in local preparedness discussions.</p>
+
+    <h3>📉 The WFP's "Triple Squeeze" on Humanitarian Response</h3>
+    <p>The WFP itself is facing what it calls a "triple squeeze" in 2026: <strong>rising needs, increased delivery costs (due to Middle East shipping disruptions), and shrinking funding</strong>. The organization estimates it will serve <strong>1.5 million fewer people</strong> than originally planned in 2026 — just as the people who need it most are about to need it more than ever. This means that the safety net for the most vulnerable Filipinos (and globally) will be thinner precisely when the crisis hits hardest.</p>
+
+    <h3>⚡ The Energy-Food Nexus in the Philippines</h3>
+    <p>The Philippines declared a State of National Energy Emergency in March 2026. El Niño will make this worse: reduced hydroelectric output means the grid relies more on fossil fuels, whose prices are being driven up by the Middle East conflict. Higher electricity costs hurt food processing, cold chain logistics (keeping food from spoiling), and water pumping. This is a vicious cycle — energy shortage worsens food shortage, and both are being hit simultaneously by climate and geopolitics.</p>
+
+    <h3>🌾 The Vietnam Rice Supply Risk — A Hidden Vulnerability</h3>
+    <p>The Philippines' dependence on Vietnam for 80–90% of its rice imports is not just a trade statistic — it is a structural fragility that has largely been ignored in domestic preparedness discussions. Vietnam's Mekong River Delta is acutely sensitive to El Niño: salinity intrusion from reduced river flow, combined with drought, can cut rice output by 10–13% in extreme years. If Vietnam restricts exports to protect its own food supply (as it has done in past crises), the Philippines faces a sudden import shortfall at exactly the moment domestic production is also failing. This scenario needs dedicated contingency planning, including ASEAN-level pre-positioning agreements.</p>
+  </div>
+</section>
+
+<!-- REFERENCES -->
+<div class="refs">
+  <div class="refs-inner">
+    <h3>📚 Sources & References</h3>
+
+    <div class="ref-item"><span class="ref-num">[1]</span> <strong>NOAA Climate Prediction Center</strong>, "ENSO Diagnostic Discussion," May 16, 2026. <a href="https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_advisory/ensodisc.shtml" target="_blank">cpc.ncep.noaa.gov</a></div>
+
+    <div class="ref-item"><span class="ref-num">[2]</span> <strong>World Meteorological Organization (WMO)</strong>, "WMO: Prepare for El Niño," Press Release, June 2, 2026. <a href="https://wmo.int/news/media-centre/wmo-prepare-el-nino" target="_blank">wmo.int</a></div>
+
+    <div class="ref-item"><span class="ref-num">[3]</span> <strong>WMO</strong>, "WMO: Likelihood Increases of El Niño," April 24, 2026. <a href="https://wmo.int/media/news/wmo-likelihood-increases-of-el-nino" target="_blank">wmo.int</a></div>
+
+    <div class="ref-item"><span class="ref-num">[4]</span> <strong>Climate Adaptation Center</strong>, "2026 Is Building Up To A Super El Niño," by Stu Waterman, May 29, 2026. <a href="https://www.theclimateadaptationcenter.org/2026/05/29/2026-is-building-up-to-a-super-el-nino/" target="_blank">theclimateadaptationcenter.org</a></div>
+
+    <div class="ref-item"><span class="ref-num">[5]</span> <strong>PAGASA</strong>, "El Niño Alert Issued," April 22, 2026, via Philippine Information Agency and Manila Bulletin. <a href="https://pia.gov.ph/news/pagasa-urges-preparedness-for-possible-el-nino-by-mid-2026/" target="_blank">pia.gov.ph</a></div>
+
+    <div class="ref-item"><span class="ref-num">[6]</span> <strong>Rappler</strong>, "PAGASA: El Niño has 79% chance of emerging within months," April 22, 2026. <a href="https://www.rappler.com/philippines/weather/pagasa-el-nino-alert-april-2026/" target="_blank">rappler.com</a></div>
+
+    <div class="ref-item"><span class="ref-num">[7]</span> <strong>GMA News</strong>, "DA ramps up preps for El Niño amid threat to PH food supply," May–June 2026. <a href="https://www.gmanetwork.com/news/topstories/nation/989314/el-nino-2026-agriculture/story/" target="_blank">gmanetwork.com</a></div>
+
+    <div class="ref-item"><span class="ref-num">[8]</span> <strong>GMA News</strong>, "Which areas in PH are likely to be hit by drought in 2026?" April 26, 2026. <a href="https://www.gmanetwork.com/news/weather/content/985366/drought-philippines-2026/story/" target="_blank">gmanetwork.com</a></div>
+
+    <div class="ref-item"><span class="ref-num">[9]</span> <strong>Philippine Daily Inquirer</strong>, "Super El Niño could hit regions differently, study warns," May 2026. <a href="https://newsinfo.inquirer.net/2234585/super-el-nino-could-hit-regions-differently-study-warns" target="_blank">newsinfo.inquirer.net</a></div>
+
+    <div class="ref-item"><span class="ref-num">[10]</span> <strong>Philippine Daily Inquirer / Asia News Network</strong>, "Philippine El Niño history shows a pattern of short-term fixes," May 6, 2026. <a href="https://newsinfo.inquirer.net/2223518/el-nino-history-shows-pattern-of-short-term-fixes" target="_blank">newsinfo.inquirer.net</a></div>
+
+    <div class="ref-item"><span class="ref-num">[11]</span> <strong>Philippine Daily Inquirer</strong>, "Debt, peso slide and looming Super El Niño put PH food security at risk," May 2026. <a href="https://newsinfo.inquirer.net/2231533/debt-peso-slide-and-looming-super-el-nino-put-ph-food-security-at-risk" target="_blank">newsinfo.inquirer.net</a></div>
+
+    <div class="ref-item"><span class="ref-num">[12]</span> <strong>World Bank / ReliefWeb</strong>, "Striking a Balance: Managing El Niño and La Niña in Philippines' Agriculture," 2019. <a href="https://reliefweb.int/report/philippines/striking-balance-managing-el-ni-o-and-la-ni-philippines-agriculture" target="_blank">reliefweb.int</a></div>
+
+    <div class="ref-item"><span class="ref-num">[13]</span> <strong>WFP</strong>, "Impacts of the Ongoing Energy Crisis and the Forecasted El Niño to the Philippines," May 2026. <a href="https://www.wfp.org/publications/impacts-ongoing-energy-crisis-and-forecasted-el-nino-philippines" target="_blank">wfp.org</a></div>
+
+    <div class="ref-item"><span class="ref-num">[14]</span> <strong>WFP</strong>, "WFP projects food insecurity could reach record levels as a result of Middle East escalation," March 17, 2026. <a href="https://www.wfp.org/news/wfp-projects-food-insecurity-could-reach-record-levels-result-middle-east-escalation" target="_blank">wfp.org</a></div>
+
+    <div class="ref-item"><span class="ref-num">[15]</span> <strong>WFP</strong>, "How the Middle East crisis is deepening hunger far beyond the front lines," April 20, 2026. <a href="https://www.wfp.org/stories/how-mideast-crisis-deepening-hunger-far-beyond-front-lines" target="_blank">wfp.org</a></div>
+
+    <div class="ref-item"><span class="ref-num">[16]</span> <strong>WFP</strong>, "WFP warning becomes a reality for millions as Middle East crisis pushes poorest families further into hunger," June 2026. <a href="https://www.wfp.org/news/wfp-warning-becomes-reality-millions-middle-east-crisis-pushes-poorest-families-further-hunger" target="_blank">wfp.org</a></div>
+
+    <div class="ref-item"><span class="ref-num">[17]</span> <strong>Philstar</strong>, "Prolonged war threatens Philippine food supply," March 23, 2026 (WFP quote from Rania Dagash-Kamara). <a href="https://www.philstar.com/business/2026/03/23/2516126/prolonged-war-threatens-philippine-food-supply" target="_blank">philstar.com</a></div>
+
+    <div class="ref-item"><span class="ref-num">[18]</span> <strong>CNBC</strong>, "From war to weather: A 'super El Niño' event poses fresh risks to global food costs," April 9, 2026. <a href="https://www.cnbc.com/2026/04/09/el-nino-food-risks-iran-war-fertilizer-weather.html" target="_blank">cnbc.com</a></div>
+
+    <div class="ref-item"><span class="ref-num">[19]</span> <strong>World Bank</strong>, "Food Security Update" — fertilizer prices, El Niño rice impacts, May 2026. <a href="https://www.worldbank.org/en/topic/agriculture/brief/food-security-update" target="_blank">worldbank.org</a></div>
+
+    <div class="ref-item"><span class="ref-num">[20]</span> <strong>WTO</strong>, "Members discuss agriculture domestic support, impact of El Niño and Middle East conflict," May 27, 2026. <a href="https://www.wto.org/english/news_e/news26_e/agri_27may26_399_e.htm" target="_blank">wto.org</a></div>
+
+    <div class="ref-item"><span class="ref-num">[21]</span> <strong>ORF Middle East</strong>, "Impacts of an Impending 'Super' El-Niño on Global Supply Chains," by Leigh Mante, May 2026. <a href="https://orfme.org/expert-speak/impacts-of-an-impending-super-el-nino-on-global-supply-chains/" target="_blank">orfme.org</a></div>
+
+    <div class="ref-item"><span class="ref-num">[22]</span> <strong>J.P. Morgan</strong>, "Food Security Under Pressure: Fertilizer Supply Chain Disruptions and El Niño Risks," May 2026. <a href="https://www.jpmorgan.com/insights/sustainability/climate/food-security-under-pressure" target="_blank">jpmorgan.com</a></div>
+
+    <div class="ref-item"><span class="ref-num">[23]</span> <strong>New Food Magazine</strong>, "El Niño and the global food system: the warnings from history," by Chris Elliott, April 30, 2026. <a href="https://www.newfoodmagazine.com/el-nino-and-the-global-food-system-the-warnings-from-history/2135344.article" target="_blank">newfoodmagazine.com</a></div>
+
+    <div class="ref-item"><span class="ref-num">[24]</span> <strong>NOAA / AOML</strong>, "How does El Niño Impact Atlantic Hurricane Season," June 2026. <a href="https://www.aoml.noaa.gov/how-does-el-nino-impact-atlantic-hurricane-season/" target="_blank">aoml.noaa.gov</a></div>
+
+    <div class="ref-item"><span class="ref-num">[25]</span> <strong>Manila Times</strong>, "What 'Super' El Niño could bring to the Philippines," June 3, 2026. <a href="https://www.manilatimes.net/2026/06/03/opinion/columns/what-super-el-nio-could-bring-to-the-philippines/2357045" target="_blank">manilatimes.net</a></div>
+
+    <div class="ref-item"><span class="ref-num">[26]</span> <strong>EarthSky</strong>, "Prepare for El Niño conditions, urge officials," June 2026. <a href="https://earthsky.org/earth/super-el-nino-record-temperatures-2026-2027/" target="_blank">earthsky.org</a></div>
+
+    <div class="ref-item"><span class="ref-num">[27]</span> <strong>UN Media / Unifeed</strong>, Celeste Saulo Geneva Press Conference transcript, June 2, 2026. <a href="https://media.un.org/unifeed/en/asset/d358/d3580926" target="_blank">media.un.org</a></div>
+
+    <div class="ref-item"><span class="ref-num">[28]</span> <strong>AccuWeather</strong>, "Super El Niño: What it could mean for US weather, global heat and daily life," April 10, 2026. <a href="https://www.accuweather.com/en/climate/super-el-nino" target="_blank">accuweather.com</a></div>
+  </div>
+</div>
+
+<div class="footer">
+  Compiled June 8, 2026 · All data from verified public sources · Fact-checked against NOAA, WMO, PAGASA, WFP, World Bank, and Philippine news outlets
+</div>
+
+</body>
+</html>
